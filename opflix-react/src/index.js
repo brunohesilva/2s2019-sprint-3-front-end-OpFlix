@@ -5,19 +5,36 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import App from './pages/Home/App';
-import NaoEncontrado from './pages/NaoEncontrado/NaoEncontrado';
 import Categoria from './pages/Categoria/Categoria';
-
+import Usuarios from './pages/Usuarios/Usuarios';
+import Login from './pages/Login/Login';
+import NaoEncontrado from './pages/NaoEncontrado/NaoEncontrado';
 
 import * as serviceWorker from './serviceWorker';
+
+const RotaPrivada = ({component: Component}) =>(
+    <Route
+        render={props =>
+            localStorage.getItem("usuario-opflix") !== null ? (
+                <Component {...props} /> 
+            ) : (
+                <Redirect 
+                    to={{ pathname: "/login", state: {from: props.location}}}
+                />
+            )
+        }
+    />        
+);
 
 const routing = (
     <Router>
         <div>
             <Switch>
                 <Route exact path='/' component={App} />
-                <Route component={NaoEncontrado} />
-                <Route path='/categoria' component={Categoria} />
+                <RotaPrivada exact path='/categoria' component={Categoria} />
+                <Route path='/usuarios' component={Usuarios} />
+                <Route path='/login' component={Login} />
+                {/* <Route component={NaoEncontrado} /> */}
             </Switch>
         </div>
     </Router>
