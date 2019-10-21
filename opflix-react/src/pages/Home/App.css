@@ -13,8 +13,10 @@
   color: white;
 }
 
-.AppHome {
-  background-image: url('../../assets/img/VD4KW.jpg');
-  height: 717px;
-
+body{
+  background-image:  url('../../assets/img/TWD4KW.jpg') ;
+  /* background-position: center; */
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
 }
+

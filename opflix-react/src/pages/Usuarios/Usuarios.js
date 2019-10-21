@@ -28,7 +28,7 @@ class Usuarios extends Component{
     }
     
     listaAtualizada = () =>{
-        fetch('http://localhost:3000/api/usuarios')
+        fetch('http://localhost:5000/api/usuarios')
             .then(response => response.json())
             .then(data => this.setState({ lista: data}));
     }
@@ -36,7 +36,7 @@ class Usuarios extends Component{
     adicionaItem = (event) => {
         event.preventDefault();
         console.log(this.state.Nome, this.state.Email, this.state.Senha, this.state.Permissao);
-        fetch('http://localhost:3000/api/usuarios',{
+        fetch('http://localhost:5000/api/usuarios',{
             method: "POST",
             body: JSON.stringify({ Nome: this.state.Nome,  Email: this.state.Email, Senha: this.state.Senha, Permissao: this.state.Permissao}),
             headers: {
@@ -149,8 +149,8 @@ class Usuarios extends Component{
                             value={this.state.Senha}
                             onInput={this.atualizarSenha}
                             />
-                            <input
-                            type="text"
+                            <input 
+                            type="text" 
                             className="className__permissao"
                             id="input__permissao"
                             placeholder="Permissao"
@@ -158,7 +158,7 @@ class Usuarios extends Component{
                             onInput={this.atualizarPermissao}
                             />
                             <button
-                            id="btn__cadastrar"
+                            id="btn__cadastrar" 
                             onClick={this.adicionaItem}
                             className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro"
                             >
