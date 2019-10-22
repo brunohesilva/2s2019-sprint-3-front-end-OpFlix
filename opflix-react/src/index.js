@@ -5,11 +5,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import App from './pages/Home/App';
+import Lanacanmentos from './pages/Lancamentos/LancamentosAdmin';
 import Categorias from "./pages/Categorias/CategoriasAdmin";
-
+import Usuarios from "./pages/Usuarios/UsuariosAdmin";
+import UsuariosAdmin from "./pages/Usuarios/UsuariosAdmin";
+import UsuariosComun from "./pages/Usuarios/UsuariosComun";
 import CategoriasAdmin from "./pages/Categorias/CategoriasAdmin";
 import CategoriasComum from "./pages/Categorias/CategoriasComun";
-import Usuarios from './pages/Usuarios/Usuarios';
+import LanacanmentosAdmin from "./pages/Lancamentos/LancamentosAdmin";
+import LanacanmentosComun from "./pages/Lancamentos/LancamentosComun";
 import Login from './pages/Login/Login';
 import NaoEncontrado from './pages/NaoEncontrado/NaoEncontrado';
 
@@ -21,10 +25,11 @@ const PermissaoComum = ({ component: Component}) => (
     <Route 
         render={
             props =>
-                parseJwt().Permissao === "CLIENTE" ? (
-                    <PermissaoComum {...props} />
+                parseJwt().Permissao === "ADMINISTRADOR" ? (
+                    <Component {...props} />
                 ) : (
-                    <CategoriasAdmin {...props} />
+                    <Redirect
+                    to={{pathname: "/", state: {from: props.location}}} />
                 )
         }
     />
@@ -35,10 +40,14 @@ const routing = (
         <div>
             <Switch>
                 <Route exact path='/' component={App} />
-                {/* <RotaPrivada path='/categorias' component={Categoria} /> */}
-                {/* <RotaPrivada path='/usuarios' component={Usuarios} /> */}
                 <Route path='/login' component={Login} />
-                <PermissaoComum path='/categorias' component={CategoriasComum}/>
+                <Route path='/usuarios' component={UsuariosComun} />
+                <Route path='/categorias' component={CategoriasComum}/>
+                <Route path='/lancamentos' component={LanacanmentosComun} />
+                <PermissaoComum path='/usuariosAdmin' component={UsuariosAdmin} />
+                <PermissaoComum path='/categoriasAdmin' component={CategoriasAdmin}/>
+                <PermissaoComum path='/lancamentosAdmin' component={LanacanmentosAdmin} />
+                
                 {/* <Route component={NaoEncontrado} /> */}
             </Switch>
         </div>

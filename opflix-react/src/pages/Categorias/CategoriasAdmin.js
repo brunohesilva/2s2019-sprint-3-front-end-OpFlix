@@ -1,10 +1,7 @@
 import React,{Component} from 'react';
-
 import logosimples from '../../assets/img/LogoSimples.png';
 import Rodape from '../../components/Rodape/Rodape';
-
 import { parseJwt } from "../../services/auth";
-
 
 class CategoriasAdmin extends Component{
 
@@ -15,57 +12,38 @@ class CategoriasAdmin extends Component{
         };
         this.state = {
             lista: [
-                // {IdCategoria: 1, Categoria: "Design"},
-                // {IdCategoria: 2, Categoria: "Jogos"},
-                // {IdCategoria: 3, Categoria: "Meetup"}
+                // {IdUsuario: 1, Nome: "Erik", Email: "erik@email.com", Senha: "123456", Permissao: "ADMINISTRADOR"},
+                // {IdUsuario: 2, Nome: "Cassiana", Email: "cassiana@email.com", Senha: "123456", Permissao: "ADMINISTRADOR"},
+                // {IdUsuario: 3, Nome: "Helena", Email: "helena@email.com", Senha: "123456", Permissao: "ADMINISTRADOR"}
             ],
-            Categoria: ''
+            Categoria : ''
         };
+
+        this.cadastrarCategoria = this.cadastrarCategoria.bind(this);
     }
 
-
-    componentDidMount(){
-        this.setState({Permissao: parseJwt().Permissao})
-    }
-
-    componentDidMount(){
-        this.listaAtualizada();
-     }
-
-     listaAtualizada = () =>{
-        fetch('http://localhost:5000/api/categorias')
-            .then(response => response.json())
-            .then(data => this.setState({ lista: data}));
-    }
-
-    adicionaItem = (event) => {
+    
+    cadastrarCategoria(event) {
         event.preventDefault();
-        console.log(this.state.nome);
-        fetch('http://localhost:5000/api/categorias',{
+        fetch("http://localhost:5000/api/categorias", {
             method: "POST",
             body: JSON.stringify({ Categoria: this.state.Categoria }),
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Accept" : "application/json"
             }
         })
-        .then(this.listaAtualizada())
-        .catch(error => console.log(error))
-        
-    }
+        .then(response => response.json())
+        .catch(error => console.log(error));
+   }
 
-    adicionaCategoria = () =>{
-        let valores_lista = this.state.lista;
-        let Categoria = {categoria: this.state.Categoria}
+   atualizarCategoria(event) {
+       this.setState({ Categoria: event.target.value })
+   }
 
-        valores_lista.push(Categoria);
-
-        this.setState({lista: valores_lista});
-    }
-
-    atualizarCategoria = (event) =>{
-        this.setState({Categoria: event.target.value})
-        console.log(this.state);
-    }
+   componentDidMount(){
+    this.setState({Permissao: parseJwt().Permissao})
+}
 
     render(){
         return(
@@ -88,7 +66,7 @@ class CategoriasAdmin extends Component{
                         <thead>
                             <tr>
                             <th>#</th>
-                            <th>Título</th>
+                            <th>Categoria</th>
                             </tr>
                         </thead>
 
@@ -100,13 +78,15 @@ class CategoriasAdmin extends Component{
                         <h2 className="conteudoPrincipal-cadastro-titulo">
                         Cadastrar Categoria
                         </h2>
-                        <form>
+                        <form onSubmit={this.cadastrarCategoria }>
                         <div className="container">
                             <input
                             type="text"
                             className="className__categoria"
                             id="input__categoria"
                             placeholder="Categoria"
+                            value={this.state.Categoria}
+                            onChange={this.atualizarCategoria.bind(this)}
                             />
                             <button
                             id="btn__cadastrar"
