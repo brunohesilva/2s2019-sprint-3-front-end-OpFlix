@@ -12,27 +12,12 @@ class CategoriasAdmin extends Component{
             Permissao : ''
         };
         this.state = {
-            lista: [],
             Categoria : ''
         };
 
         this.cadastrarCategoria = this.cadastrarCategoria.bind(this);
     }
 
-    listaAtualizada() {
-        Axios.get('http://localhost:5000/api/categorias', {
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('usuario-opflix')
-            }
-        })
-            .then(data => {
-                this.setState({ lista: data.data });
-                console.log(this.state)
-            })
-            .catch(erro => {
-                console.log(erro);
-            });
-    }
 
     
     cadastrarCategoria(event) {
@@ -75,18 +60,7 @@ class CategoriasAdmin extends Component{
                 <main className="conteudoPrincipal">
                     <section className="conteudoPrincipal-cadastro">
                     <div className="container" id="conteudoPrincipal-lista">
-                <div className="categorias">
-                    {this.state.lista.map(element => {
-                        return (
-                            <div id="infos">
-                                <ul>
-                                    <li># {element.idCategoria}</li>
-                                    <li>Categoria: {element.categoria}</li>
-                                </ul>
-                            </div>
-                        );
-                    })}
-                </div>
+
                     </div>
                    
                         <div className="container" id="conteudoPrincipal-cadastro">

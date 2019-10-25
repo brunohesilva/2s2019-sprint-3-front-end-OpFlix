@@ -12,6 +12,7 @@ import UsuariosAdmin from "./pages/Usuarios/UsuariosAdmin";
 import UsuariosComun from "./pages/Usuarios/UsuariosComun";
 import CategoriasAdmin from "./pages/Categorias/CategoriasAdmin";
 import CategoriasComum from "./pages/Categorias/CategoriasComun";
+import ListaCategorias from "./pages/Categorias/Categorias";
 import LanacanmentosAdmin from "./pages/Lancamentos/LancamentosAdmin";
 import LanacanmentosComun from "./pages/Lancamentos/LancamentosComun";
 import Login from './pages/Login/Login';
@@ -47,6 +48,7 @@ const routing = (
                 <PermissaoComum path='/usuariosAdmin' component={UsuariosAdmin} />
                 <PermissaoComum path='/categoriasAdmin' component={CategoriasAdmin}/>
                 <PermissaoComum path='/lancamentosAdmin' component={LanacanmentosAdmin} />
+                <PermissaoComum path='/listacategorias' component={ListaCategorias} />
                 
                 {/* <Route component={NaoEncontrado} /> */}
             </Switch>

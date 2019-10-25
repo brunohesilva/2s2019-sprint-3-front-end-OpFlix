@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
-
 import logosimples from "../../assets/img/LogoSimples.png";
 import Rodape from '../../components/Rodape/Rodape';
-
 import { parseJwt } from "../../services/auth";
+import Axios from "axios";
+
 
 class Categorias extends Component{
 
@@ -11,7 +11,25 @@ class Categorias extends Component{
         super();
         this.state = {
             Permissao : ''
-        }
+        };
+        this.state = {
+            lista: []
+        };
+    }
+
+    listaAtualiada() {
+        Axios.get('http://localhost:5000/api/categorias', {
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-opflix')
+            }
+        })
+            .then(data => {
+                this.setState({ lista: data.data });
+                console.log(this.state)
+            })
+            .catch(erro => {
+                console.log(erro);
+            });
     }
 
     componentDidMount(){
@@ -35,16 +53,18 @@ class Categorias extends Component{
                     <section className="conteudoPrincipal-cadastro">
                     <h1 className="conteudoPrincipal-cadastro-titulo">Categorias</h1>
                     <div className="container" id="conteudoPrincipal-lista">
-                        <table id="tabela-lista">
-                        <thead>
-                            <tr>
-                            <th>#</th>
-                            <th>Título</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="tabela-lista-corpo"></tbody>
-                        </table>
+                    <div className="categorias">
+                    {this.state.lista.map(element => {
+                        return (
+                            <div id="infos">
+                                <ul>
+                                    <li># {element.idCategoria}</li>
+                                    <li>Categoria: {element.categoria}</li>
+                                </ul>
+                            </div>
+                        );
+                    })}
+                </div>
                     </div>
                     {(this.state.Permissao === "ADMINISTRADOR") ? 
                         (
