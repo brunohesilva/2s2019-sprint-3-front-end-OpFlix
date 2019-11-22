@@ -29,7 +29,7 @@ class UsuariosAdmin extends Component{
 
     cadastrarUsuario(event) {
          event.preventDefault();
-         fetch("http://localhost:5000/api/usuarios", {
+         fetch("http://192.168.4.209:5000/api/usuarios", {
              method: "POST",
              body: JSON.stringify({ Nome: this.state.Nome, Email: this.state.Email , Senha: this.state.Senha, Permissao: this.state.Permissao }),
              headers: {

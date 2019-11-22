@@ -22,7 +22,7 @@ class CategoriasAdmin extends Component{
     
     cadastrarCategoria(event) {
         event.preventDefault();
-        fetch("http://localhost:5000/api/categorias", {
+        fetch("http://192.168.4.209:5000/api/categorias", {
             method: "POST",
             body: JSON.stringify({ Categoria: this.state.Categoria }),
             headers: {

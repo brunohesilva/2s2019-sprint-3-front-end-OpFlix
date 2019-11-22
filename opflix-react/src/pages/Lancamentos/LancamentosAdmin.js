@@ -26,7 +26,7 @@ class LancamentosAdmin extends Component{
 
     cadastrarLancamento(event) {
         event.preventDefault();
-        fetch("http://localhost:5000/api/lancamentos", {
+        fetch("http://192.168.4.209:5000/api/lancamentos", {
             method: "POST",
             body: JSON.stringify({ Titulo: this.state.Titulo, Sinopse: this.state.Sinopse, IdCategoria: this.state.IdCategoria,  TempoDuracao: this.state.TempoDuracao, FilmeSerie: this.state.FilmeSerie, DataLancamento: this.state.DataLancamento }),
             headers: {

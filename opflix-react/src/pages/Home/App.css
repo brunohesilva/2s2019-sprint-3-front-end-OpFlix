@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .App-header {
@@ -10,13 +11,64 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 body{
-  background-image:  url('../../assets/img/TWD4KW.jpg') ;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+.cabecalhoPrincipal-nav{ 
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 50px;
+  margin-top: 60px
+  /* position: absolute; */
+  /* background-color: #FF5A01; */
+  /* justify-content: space-between; */
+}
+
+a{
+  margin-right: 50px;
+  font-size: 2em
+}
+
+/* .cabecalhoPrincipal-nav a{
+  display: flex;
+} */
+
+.container{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.conteudoImagem{
+  color: white;
+  margin-top: 250px;
+  display: flex;
+  margin-left: 350px;
+  
+}
+#conteudoPrincipal-contato{
+  color: #FF5A01;
+}
+.AppHome{
+  background-color: black;
+  height: 790px;
+  /* background-image:  url('../../assets/img/TWD4KW.jpg'); */
+  /* height: 790px; */
+  /* background-repeat: no-repeat; */
+  /* background-position-x: 500px; */
   /* background-position: center; */
   /* background-attachment: fixed; */
-  background-repeat: no-repeat;
+}
+.LogoSimples img{
+  background-color: #FF5A01;
+  border-radius: 50px;
+  display: flex;
+  margin-left: 25px;
+  position: absolute;
+  margin-top: 25px;
 }
 

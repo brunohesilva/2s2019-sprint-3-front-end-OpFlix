@@ -19,12 +19,14 @@ function App() {
 
       <header className="cabecalhoPrincipal">
         <div className="container">
+          <div className="LogoSimples">
           <img src={logosimples} />
+          </div>
 
           <nav className="cabecalhoPrincipal-nav">
             <a>Plataformas/Mídias</a>
             <a>Lançamentos</a>
-            <a>Catgorias</a>
+            <a>Categorias</a>
             <Link className="cabecalhoPrincipal-nav-login" to="/login">Login</Link>
           </nav>
         </div>

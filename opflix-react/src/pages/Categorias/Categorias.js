@@ -18,7 +18,7 @@ class Categorias extends Component{
     }
 
     listaAtualiada() {
-        Axios.get('http://localhost:5000/api/categorias', {
+        Axios.get('http://192.168.4.209:5000/api/categorias', {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-opflix')
             }
