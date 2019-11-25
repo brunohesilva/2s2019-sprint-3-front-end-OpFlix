@@ -1,0 +1,19 @@
+.container-flex {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .cabecalhoPrincipal-nav{ 
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 50px;
+    margin-top: 60px
+    /* position: absolute; */
+    /* background-color: #FF5A01; */
+    /* justify-content: space-between; */
+  }
+.a{
+    margin-right: 50px;
+    font-size: 1em
+}

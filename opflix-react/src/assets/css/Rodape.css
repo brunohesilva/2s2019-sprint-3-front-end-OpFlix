@@ -1,9 +1,14 @@
+.rodapePrincipal-patrocinadores{
+    background-color: #FF5A01;
+    height: 70px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
 p {
     color: #ffffff;
-    font-size: 2em;
+    font-size: 1.4em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    background-color: #FF5A01;
-    height: 50px;
+    margin-left: 525px;
 }
 

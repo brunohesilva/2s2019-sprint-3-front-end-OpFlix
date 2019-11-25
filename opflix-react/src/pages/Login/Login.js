@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Rodape from '../../components/Rodape/Rodape';
 import RodapeStyle from '../../assets/css/Rodape.css';
 import logosimples from '../../assets/img/LogoSimples.png';
+import LoginStyle from '../Login/Login.css';
 
 import Axios from 'axios';
 
@@ -29,11 +30,11 @@ class Login extends Component {
     efetuarLogin = (event) => {
         event.preventDefault();
 
-        let url= "http://192.168.4.209:5000/api/login";
+        let url = "http://192.168.4.209:5000/api/login";
 
         Axios.post(url, {
             headers: {
-                "Content-Type" : "application/json"
+                "Content-Type": "application/json"
             },
             Email: this.state.Email,
             Senha: this.state.Senha,
@@ -55,7 +56,7 @@ class Login extends Component {
 
     render() {
         return (
-            <section className="container flex">
+            <section className="container-flex">
                 <div className="img__login"><div className="img__overlay"></div></div>
 
                 <div className="item__login">
@@ -63,6 +64,11 @@ class Login extends Component {
                         <div className="item">
                             <img src={logosimples} className="icone__login" />
                         </div>
+                        <nav className="cabecalhoPrincipal-nav">
+                            <a>Plataformas/Mídias</a>
+                            <a>Lançamentos</a>
+                            <a>Categorias</a>
+                        </nav>
                         <div className="item" id="item__title">
                             <p className="text__login" id="item__description">
                                 Bem-vindo! Faça login para acessar sua conta.

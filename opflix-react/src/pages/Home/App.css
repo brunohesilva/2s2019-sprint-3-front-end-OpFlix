@@ -14,7 +14,6 @@
 }
 
 body{
-  background-repeat: no-repeat;
   background-color: black;
 }
 .cabecalhoPrincipal-nav{ 
@@ -68,7 +67,41 @@ a{
   border-radius: 50px;
   display: flex;
   margin-left: 25px;
-  position: absolute;
+  /* position: absolute; */
   margin-top: 25px;
 }
 
+main{
+  height: 675px;
+  background-color: black;
+}
+
+#conteudoPrincipal-contato-titulo{
+  font-size: 2em;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-left: 665px;
+  margin-top: -5px;
+}
+.conteudo-contato-mapa{
+  margin-left: 390px;
+  margin-top: 60px;
+  background-color: #FF5A01;
+}
+.conteudo-contato-endereco{
+  margin-top: 600px;
+  display: flex;
+  position: absolute;
+  margin-left: 590px;
+}
+#Rodape{
+  background-color: white;
+}
+.linha{
+  background-color: white;
+  height: 10px;
+  border-radius: 50px;
+  margin-top: 30px;
+}

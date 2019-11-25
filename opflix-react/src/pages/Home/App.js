@@ -35,6 +35,9 @@ function App() {
       <section className="conteudoImagem">
         <div>
           <img src={logo} />
+          <div className="linha">
+
+          </div>
           <h2>Saiba tudo sobre a Industria do
             <br />
             entretenimento aqui na OpFlix.</h2>
@@ -45,9 +48,10 @@ function App() {
       <section id="conteudoPrincipal-contato">
             <h1 id="conteudoPrincipal-contato-titulo">Contato</h1>
             <div className="container conteudo-contato-titulo">
-              <div className="contato-mapa conteudo-contato-mapa"></div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1487821350556!2d-46.656571184475936!3d-23.56309936754285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.+Paulista%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1552310161575" width="600" height="450" frameborder="0" allowfullscreen></iframe>
-              <div className="contato-endereco conteudo-contato-endereco">
+              <div className="conteudo-contato-mapa">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.8871329131375!2d-46.648477084871814!3d-23.536561566562437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5843deb99025%3A0xb23619858bc7e63e!2sEscola%20SENAI%20de%20Inform%C3%A1tica!5e0!3m2!1spt-BR!2sbr!4v1574680806528!5m2!1spt-BR!2sbr" width="650" height="500" frameborder="0" allowfullscreen=""></iframe>
+              </div>
+              <div className="conteudo-contato-endereco">
                 Alameda Barão de Limeira, 539 <br />
                 São Paulo - SP
               </div>
