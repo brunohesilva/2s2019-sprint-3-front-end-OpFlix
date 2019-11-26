@@ -64,12 +64,12 @@ class Login extends Component {
                         <div className="item">
                             <img src={logosimples} className="icone__login" />
                         </div>
-                        <nav className="cabecalhoPrincipal-nav">
+                        <nav className="cabecalhoPrincipal-navLogin">
                             <a>Plataformas/Mídias</a>
                             <a>Lançamentos</a>
                             <a>Categorias</a>
                         </nav>
-                        <div className="item" id="item__title">
+                        <div id="item__title">
                             <p className="text__login" id="item__description">
                                 Bem-vindo! Faça login para acessar sua conta.
                     </p>
@@ -102,13 +102,14 @@ class Login extends Component {
                                 />
                             </div>
                             <div className="item">
-                                <button className="btn btn__login" id="btn__login">
+                                <button className="btn__login">
                                     Login
                     </button>
                             </div>
                         </form>
                     </div>
                 </div>
+                <Rodape />
             </section>
         );
     }
