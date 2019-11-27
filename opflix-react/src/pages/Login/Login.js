@@ -69,6 +69,9 @@ class Login extends Component {
                             <a>Lançamentos</a>
                             <a>Categorias</a>
                         </nav>
+                        <div className="Login">
+
+
                         <div id="item__title">
                             <p className="text__login" id="item__description">
                                 Bem-vindo! Faça login para acessar sua conta.
@@ -83,11 +86,11 @@ class Login extends Component {
                                     type="text"
                                     name="username"
                                     id="login__email"
-                                />
+                                    />
                                 <p
                                     className="text__login"
                                     style={{ color: "red", textAlign: "center" }}
-                                >
+                                    >
                                     {this.state.Erro}
                                 </p>
                             </div>
@@ -99,7 +102,7 @@ class Login extends Component {
                                     type="password"
                                     name="password"
                                     id="login__password"
-                                />
+                                    />
                             </div>
                             <div className="item">
                                 <button className="btn__login">
@@ -107,6 +110,7 @@ class Login extends Component {
                     </button>
                             </div>
                         </form>
+                                    </div>
                     </div>
                 </div>
                 <Rodape />

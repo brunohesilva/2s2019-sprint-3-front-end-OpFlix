@@ -27,8 +27,15 @@
 }
 #item__title{
   display: flex;
-  margin-top: 300px;
+  margin-top: 150px;
 }
 .btn__login{
   margin-bottom: 162.5px;
+}
+.Login{
+  background-color: #FF5A01;
+  margin-bottom: 150px;
+  width: 1000px;
+  margin-left: 300px;
+  border-radius: 50px; 
 }
