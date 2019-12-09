@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import App from './pages/Home/App';
-import Lanacanmentos from './pages/Lancamentos/LancamentosAdmin';
+import Lancamentos from './pages/Lancamentos/LancamentosAdmin';
 import Categorias from "./pages/Categorias/CategoriasAdmin";
 import Usuarios from "./pages/Usuarios/UsuariosAdmin";
 import UsuariosAdmin from "./pages/Usuarios/UsuariosAdmin";
@@ -13,16 +13,17 @@ import UsuariosComun from "./pages/Usuarios/UsuariosComun";
 import CategoriasAdmin from "./pages/Categorias/CategoriasAdmin";
 import CategoriasComum from "./pages/Categorias/CategoriasComun";
 import ListaCategorias from "./pages/Categorias/Categorias";
-import LanacanmentosAdmin from "./pages/Lancamentos/LancamentosAdmin";
-import LanacanmentosComun from "./pages/Lancamentos/LancamentosComun";
+import LancamentosAdmin from "./pages/Lancamentos/LancamentosAdmin";
+import LancamentosComun from "./pages/Lancamentos/LancamentosComun";
+import LocalizacoesAdmin from "./pages/Localizacoes/LocalizacoesAdmin";
+import LocalizacoesComun from "./pages/Localizacoes/LocalizacoesComun";
 import Login from './pages/Login/Login';
 import NaoEncontrado from './pages/NaoEncontrado/NaoEncontrado';
 
 import * as serviceWorker from './serviceWorker';
 import { parseJwt } from './services/auth';
 
-
-const PermissaoComum = ({ component: Component}) => (
+const PermissaoAdmin = ({ component: Component}) => (
     <Route 
         render={
             props =>
@@ -44,11 +45,13 @@ const routing = (
                 <Route path='/login' component={Login} />
                 <Route path='/usuarios' component={UsuariosComun} />
                 <Route path='/categorias' component={CategoriasComum}/>
-                <Route path='/lancamentos' component={LanacanmentosComun} />
-                <PermissaoComum path='/usuariosAdmin' component={UsuariosAdmin} />
-                <PermissaoComum path='/categoriasAdmin' component={CategoriasAdmin}/>
-                <PermissaoComum path='/lancamentosAdmin' component={LanacanmentosAdmin} />
-                <PermissaoComum path='/listacategorias' component={ListaCategorias} />
+                <Route path='/lancamentos' component={LancamentosComun} />
+                <Route path='/localizacoes' component={LocalizacoesComun} />
+                <PermissaoAdmin path='/usuariosAdmin' component={UsuariosAdmin} />
+                <PermissaoAdmin path='/categoriasAdmin' component={CategoriasAdmin}/>
+                <PermissaoAdmin path='/lancamentosAdmin' component={LancamentosAdmin} />
+                <PermissaoAdmin path='/listacategorias' component={ListaCategorias} />
+                <PermissaoAdmin path='/localizacoesAdmin' component={LocalizacoesAdmin} />
                 
                 {/* <Route component={NaoEncontrado} /> */}
             </Switch>
