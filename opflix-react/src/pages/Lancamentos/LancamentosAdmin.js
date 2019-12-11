@@ -170,7 +170,8 @@ class LancamentosAdmin extends Component{
                     </div>
                     </section>
                 </footer>
-                </div>        );
+                </div>
+        );
     }
 }
 

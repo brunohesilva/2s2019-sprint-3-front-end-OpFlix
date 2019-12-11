@@ -51,9 +51,8 @@ const routing = (
                 <PermissaoAdmin path='/categoriasAdmin' component={CategoriasAdmin}/>
                 <PermissaoAdmin path='/lancamentosAdmin' component={LancamentosAdmin} />
                 <PermissaoAdmin path='/listacategorias' component={ListaCategorias} />
-                <PermissaoAdmin path='/localizacoesAdmin' component={LocalizacoesAdmin} />
-                
-                {/* <Route component={NaoEncontrado} /> */}
+                <PermissaoAdmin path='/localizacoesAdmin' component={LocalizacoesAdmin} />                 
+                <Route component={NaoEncontrado} />
             </Switch>
         </div>
     </Router>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Route, Link, BrowserRouter as Router, Switch, Redirect} from "react-router-dom";
 
 import Rodape from '../../components/Rodape/Rodape';
 import RodapeStyle from '../../assets/css/Rodape.css';
@@ -49,7 +50,7 @@ class Login extends Component {
                 }
             })
             .catch(Erro => {
-                this.setState({ Erro: "Usuário ou senha inválidos" });
+                this.setState({ Erro: "Email ou Senha Inválidos" });
                 console.log(Erro);
             });
     }
@@ -64,11 +65,11 @@ class Login extends Component {
                         <div className="item">
                             <img src={logosimples} className="icone__login" />
                         </div>
-                        <nav className="cabecalhoPrincipal-navLogin">
+                        {/* <nav className="cabecalhoPrincipal-navLogin">
                             <a>Plataformas/Mídias</a>
                             <a>Lançamentos</a>
                             <a>Categorias</a>
-                        </nav>
+                        </nav> */}
                         <div className="Login">
 
 
@@ -77,26 +78,20 @@ class Login extends Component {
                                 Bem-vindo! Faça login para acessar sua conta.
                     </p>
                         </div>
-                        <form onSubmit={this.efetuarLogin}>
-                            <div className="item">
+                        <form onSubmit={this.efetuarLogin} className="signin_form">
+                            <div className="item_sigin">
                                 <input
-                                    className="input__login"
-                                    placeholder="username"
+                                    className="input__loginusername"
+                                    placeholder="email"
                                     onInput={this.atualizaEstadoEmail}
                                     type="text"
                                     name="username"
                                     id="login__email"
                                     />
-                                <p
-                                    className="text__login"
-                                    style={{ color: "red", textAlign: "center" }}
-                                    >
-                                    {this.state.Erro}
-                                </p>
                             </div>
-                            <div className="item">
+                            <div className="item_signin">
                                 <input
-                                    className="input__login"
+                                    className="input__loginpassword"
                                     onInput={this.atualizaEstadoSenha}
                                     placeholder="password"
                                     type="password"
@@ -104,11 +99,18 @@ class Login extends Component {
                                     id="login__password"
                                     />
                             </div>
-                            <div className="item">
+                            <div className="item_button">
                                 <button className="btn__login">
-                                    Login
+                                    GO!
                     </button>
+                                <p
+                                    className="text__loginErro"
+                                    // style={{ color: "red", textAlign  }}
+                                    >
+                                    {this.state.Erro}
+                                </p>
                             </div>
+                            <Link to="/usuarios" className="link">Don't have an account</Link>
                         </form>
                                     </div>
                     </div>
@@ -118,5 +120,7 @@ class Login extends Component {
         );
     }
 }
+
+
 
 export default Login;

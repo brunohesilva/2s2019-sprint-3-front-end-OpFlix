@@ -9,16 +9,29 @@ import Axios from 'axios';
         super();
         this.state = {
             lista: [],
+            isOpen: false
             
         };
     }
+    handleToggleOpen = () => {
+
+        this.setState({
+            isOpen: true
+        });
+    }
+    handleToggleClose = () => {
+        this.setState({
+            isOpen: false
+        });
+    }
+
     componentDidMount(){
 
         this.listaAtualizadaLocal();
     }
 
     listaAtualizadaLocal =() =>{
-        Axios.get('http://192.168.4.209:5000/api/localizacoes'
+        Axios.get(' '
         )
         .then(response => {
             this.setState({lista: response.data})
@@ -40,13 +53,12 @@ import Axios from 'axios';
         .catch(error => console.log(error))
 
     }
-
+    
     render(){
         return(
             <div>
 
         <Map
-
           google={this.props.google}
           zoom={8}
           style={{width: '100%',height: '100%'}}
@@ -54,15 +66,32 @@ import Axios from 'axios';
         >
           {this.state.lista.map(element =>{
                             return(
-                              <Marker 
-                              position ={{lat: element.latitude, lng : element.longitude}}/>
+                                <Marker position ={{lat: element.latitude, lng : element.longitude}} text ={element.nomeLancamento} label={element.nomeLancamento.toString()} onClick={() => this.handleToggleOpen()}>
+                                    {
+			this.state.isOpen &&
+		 <InfoWindow onCloseClick={this.props.handleCloseCall}>
+			 
+		 </InfoWindow>
+	 	}
+
+
+		</Marker>
+                                
+                                 
+                                
                             )
+                            
                         })}
-        </Map>   
+                        
+        </Map>
+
+        
           </div>
+          
         );
+        
     }
-} 
+}
 export default GoogleApiWrapper({
 
   })(LocalizacoesComun);
