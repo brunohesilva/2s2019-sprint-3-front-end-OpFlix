@@ -31,7 +31,7 @@ import Axios from 'axios';
     }
 
     listaAtualizadaLocal =() =>{
-        Axios.get(' '
+        Axios.get('http://192.168.4.209:5000/api/localizacoes'
         )
         .then(response => {
             this.setState({lista: response.data})

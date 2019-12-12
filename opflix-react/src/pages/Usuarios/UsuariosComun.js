@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
-import './Usuarios.css';
+// import './Usuarios.css';
 import Rodape from '../../components/Rodape/Rodape';
 import RodapeStyle from '../../assets/css/Rodape.css';
 import logosimples from '../../assets/img/LogoSimples.png';
+import UsuariosComunStyle from './UsuariosComun.css'
+
 
 class UsuariosComun extends Component{
 
@@ -63,7 +65,7 @@ class UsuariosComun extends Component{
 
                 <main className="conteudoPrincipal">
                     <section className="conteudoPrincipal-cadastro">
-                    {/* <h1 className="conteudoPrincipal-cadastro-titulo">Usuários</h1> */}
+                    {/* <h1 className="conteudoPrincipal-cadastro-titulo">C</h1> */}
                     {/* <div className="container" id="conteudoPrincipal-lista">
                         <table id="tabela-lista">
                         <thead>
@@ -82,9 +84,9 @@ class UsuariosComun extends Component{
                    
                         <div className="container" id="conteudoPrincipal-cadastro">
                         <h2 className="conteudoPrincipal-cadastro-titulo">
-                        Cadastrar Usuário
+                        Cadastra um Usuário!
                         </h2>
-                        <form onSubmit={this.cadastrarUsuario}>
+                        <form onSubmit={this.cadastrarUsuario} className="form_usercomun">
                         <div className="container">
                             <input
                             type="text"
@@ -114,7 +116,7 @@ class UsuariosComun extends Component{
                             id="btn__cadastrar"
                             className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro"
                             >
-                            Cadastrar
+                            GO!
                             </button>
                         </div>
                         </form>

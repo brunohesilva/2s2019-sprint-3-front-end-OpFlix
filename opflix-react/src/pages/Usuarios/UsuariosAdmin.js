@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './Usuarios.css';
+// import './Usuarios.css';
 import Rodape from '../../components/Rodape/Rodape';
 import RodapeStyle from '../../assets/css/Rodape.css';
 import logosimples from '../../assets/img/LogoSimples.png';
