@@ -26,9 +26,9 @@ function App() {
           <nav className="cabecalhoPrincipal-nav">
 
 
-            <a>Plataformas/Mídias</a>
+            {/* <a>Plataformas/Mídias</a>
             <a>Lançamentos</a>
-            <a>Categorias</a>
+            <a>Categorias</a> */}
 
             <Link className="cabecalhoPrincipal-nav-login" to="/login">Login</Link>
           </nav>

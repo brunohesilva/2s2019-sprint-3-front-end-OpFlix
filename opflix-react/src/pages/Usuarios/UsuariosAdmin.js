@@ -4,6 +4,8 @@ import Rodape from '../../components/Rodape/Rodape';
 import RodapeStyle from '../../assets/css/Rodape.css';
 import logosimples from '../../assets/img/LogoSimples.png';
 import { parseJwt } from "../../services/auth";
+import UsuariosAdminStyle from './UsuariosAdmin.css'
+
 
 class UsuariosAdmin extends Component{
 
@@ -68,7 +70,6 @@ class UsuariosAdmin extends Component{
                     <img src={logosimples} />
 
                     <nav className="cabecalhoPrincipal-nav">
-                        {this.state.Permissao}
                     </nav>
                     </div>
                 </header>
@@ -93,15 +94,15 @@ class UsuariosAdmin extends Component{
                     </div> */}
                    
                         <div className="container" id="conteudoPrincipal-cadastro">
-                        <h2 className="conteudoPrincipal-cadastro-titulo">
-                        Cadastrar Usuário
+                        <h2 className="conteudoPrincipal-cadastro-tituloA">
+                        Cadastrar um Usuário aí ADM
                         </h2>
                         <form onSubmit={this.cadastrarUsuario}>
                         <div className="container">
                             <input
                             type="text"
                             className="className__nome"
-                            id="input__nome"
+                            id="input__nomeA"
                             placeholder="Nome"
                             value={this.state.Nome}
                             onChange={this.atualizarNome.bind(this)}
@@ -109,7 +110,7 @@ class UsuariosAdmin extends Component{
                             <input
                             type="text"
                             className="className__email"
-                            id="input__email"
+                            id="input__emailA"
                             placeholder="Email"
                             value={this.state.Email}
                             onChange={this.atualizarEmail.bind(this)}
@@ -117,7 +118,7 @@ class UsuariosAdmin extends Component{
                             <input
                             type="password"
                             className="className__senha"
-                            id="input__senha"
+                            id="input__senhaA"
                             placeholder="Senha"
                             value={this.state.Senha}
                             onChange={this.atualizarSenha.bind(this)}
@@ -125,16 +126,16 @@ class UsuariosAdmin extends Component{
                             <input
                             type="text"
                             className="className__permissao"
-                            id="input__permissao"
+                            id="input__permissaoA"
                             placeholder="PERMISSÃO"
                             value={this.state.Permissao}
                             onChange={this.atualizarPermissao.bind(this)}
                             />
                             <button
-                            id="btn__cadastrar"
+                            id="btn__cadastrarA"
                             className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro"
                             >
-                            Cadastrar
+                            GO!
                             </button>
                         </div>
                         </form>

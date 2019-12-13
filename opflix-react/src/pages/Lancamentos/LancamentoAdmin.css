@@ -1,0 +1,16 @@
+.container-flex {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container img{  
+    border-radius: 50px;
+    display: flex;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.conteudoPrincipal-cadastro-tituloL{
+    color: #FF5A01;
+    display: flex;
+    margin-right: 500px;
+    margin-top: -60px;
+}

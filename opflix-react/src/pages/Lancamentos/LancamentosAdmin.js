@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import logosimples from '../../assets/img/LogoSimples.png';
 import Rodape from '../../components/Rodape/Rodape';
 import { parseJwt } from "../../services/auth";
+import LancamentosAdminStyle from "./LancamentoAdmin.css";
 
 class LancamentosAdmin extends Component{
     constructor(){
@@ -81,7 +82,7 @@ class LancamentosAdmin extends Component{
 
                 <main className="conteudoPrincipal">
                     <section className="conteudoPrincipal-cadastro">
-                    <h1 className="conteudoPrincipal-cadastro-titulo">Lançamentos</h1>
+                    {/* <h1 className="conteudoPrincipal-cadastro-titulo">Lançamentos</h1>
                     <div className="container" id="conteudoPrincipal-lista">
                         <table id="tabela-lista">
                         <thead>
@@ -93,11 +94,11 @@ class LancamentosAdmin extends Component{
 
                         <tbody id="tabela-lista-corpo"></tbody>
                         </table>
-                    </div>
+                    </div> */}
                    
                         <div className="container" id="conteudoPrincipal-cadastro">
-                        <h2 className="conteudoPrincipal-cadastro-titulo">
-                        Cadastrar Lançamento
+                        <h2 className="conteudoPrincipal-cadastro-tituloL">
+                        Bora Cadastrar um Lançamento
                         </h2>
                         <form onSubmit={this.cadastrarLancamento }>
                         <div className="container">
@@ -153,7 +154,7 @@ class LancamentosAdmin extends Component{
                             id="btn__cadastrar"
                             className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro"
                             >
-                            Cadastrar
+                            GO!
                             </button>
                         </div>
                         </form>
